@@ -4,6 +4,7 @@ $(document).ready(function(){
     // alert('working')
     $('#loader').removeClass('hide')
     getBidInformation();
+    // setInterval(getBids,5000);
 })
 function getBids(){
     let token = window.localStorage.getItem('token');
@@ -17,6 +18,7 @@ function getBids(){
         headers: {"Authorization": "Bearer "+token},
         success : function(data){
             $('#loader').addClass('hide')
+            $('.container').empty()
             console.log(data);
             console.log(window.localStorage.getItem('userId'))
             var hasBid= false;
@@ -39,20 +41,36 @@ function getBids(){
                                 Bider 3145
                             </div>
                             <div class="card-body">
-                            <div  class="form-group col-md-4 float-left">
-                                Pre-payment: <span>$${newPrePayment}</span>
+                                <div  class="form-group col-md-4 float-left">
+                                    Pre-payment: <span>$${newPrePayment}</span>
                                 </div>
                                 <div class="form-group col-md-4 float-left">
                                     Monthly Fee: <span>$${data.data[i].monthlyFee}</span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-2 offset-md-10">
+                                <div class="form-group col-md-4 float-left">
+                                    Monthly advertisement: <span>$${data.data[i].advertisementMonthly}</span>
                                 </div>
+                                
+                                <div class="form-group col-md-4 float-left">
+                                    First Name: <span>${data.data[i].user.firstName}</span>
+                                </div>
+                                <div class="form-group col-md-4 float-left">
+                                    Last Name: <span>${data.data[i].user.lastName}</span>
+                                </div>
+                                <div class="form-group col-md-4 float-left">
+                                    User Name: <span>${data.data[i].user.userName}</span>
+                                </div>
+                                <div class='row'></div>
                             </div>
-                            </div>
+                            
                         </div>
                     `)
                 
+            }
+            if(data.data.length == 0){
+                $('.container').append(`
+                Bids not found!
+                `)
             }
             
         },

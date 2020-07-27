@@ -36,13 +36,11 @@ function addUser(){
 function addBidding(){
     $('#loader').removeClass('hide');
     $('#container').addClass('hide');
-    let startTime= $('#startTime').val();
-    let endTime= $('#endTime').val();
     let startAmount = $('#startAmount').val();
     let prePayment= $('#prePayment').val();
     let value={
-        startTime:startTime,
-        endTime:endTime,
+        startTime:'12/12/12',
+        endTime:'12/12/12',
         startAmount:startAmount,
         prePayment:prePayment
     }
