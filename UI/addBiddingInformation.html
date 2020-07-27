@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | General Form Elements</title>
+  <title>Bidding Poratal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -43,13 +43,13 @@
                     <h3>Add Bidding</h3>
                     <form  >
                         <div class="form-group">
-                            <input type="text" id='startAmount' class="form-control" placeholder="Start Amount *"  />
+                            <input type="number" id='startAmount' class="form-control" placeholder="Start Amount in USD *"  />
                         </div>
                         <div class="form-group">
-                            <input type="text" id='prePayment' class="form-control" placeholder="Pre-payment *"  />
+                            <input type="number" id='prePayment' min='0' max='100' class="form-control" placeholder="Pre-payment in % *"  />
                         </div>
                         <div class="form-group">
-                            <input type="button" onclick='addBidding()' class="btnSubmit" value="add Bidding" />
+                            <input type="button" onclick='addBidding()' class="btnSubmit" value="Add Bidding Details" />
                         </div>
                     </form>
                 </div>
