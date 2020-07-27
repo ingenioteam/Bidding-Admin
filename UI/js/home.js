@@ -38,7 +38,7 @@ function getBids(){
                     $('.container').append(`
                         <div class="card" style="margin-top: 5vh;">
                             <div class="card-header" style="text-align: center;">
-                                Bider ${count}
+                                Bidder ${[i]}
                             </div>
                             <div class="card-body">
                                 <div  class="form-group col-md-4 float-left">
