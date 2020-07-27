@@ -4,7 +4,7 @@ $(document).ready(function(){
     // alert('working')
     $('#loader').removeClass('hide')
     getBidInformation();
-    // setInterval(getBids,5000);
+     setInterval(getBids,1000);
 })
 function getBids(){
     let token = window.localStorage.getItem('token');
@@ -38,7 +38,7 @@ function getBids(){
                     $('.container').append(`
                         <div class="card" style="margin-top: 5vh;">
                             <div class="card-header" style="text-align: center;">
-                                Bider 3145
+                                Bider ${count}
                             </div>
                             <div class="card-body">
                                 <div  class="form-group col-md-4 float-left">
